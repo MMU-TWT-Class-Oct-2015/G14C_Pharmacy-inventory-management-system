@@ -1,0 +1,74 @@
+.profile  {
+		margin:0; 
+		padding:0; 
+		list-style:none;
+	   margin-top:10px; 
+float:left;}
+
+/* Little tricking with positions */
+	
+.profile   li {
+					/* Show list items inline */
+		width:280px; 
+		position:relative; 
+ 	}
+		
+	
+
+/* Playing with Main Categories */
+	
+.profile   li a {
+		background:#000f1a; 
+		color:#fff;
+		display:block;  	/* Making sure a element covers whole li area */
+		padding:8px 7px 8px 7px; 
+		text-decoration:none; /* No underline */
+		
+	border-bottom:1px #66c2ff solid;
+	text-align:center; 
+		text-transform:uppercase;
+	}
+
+	
+
+.profile  li a:hover {
+		color:#66c2ff;
+	}
+
+
+/* Sub Cat Menu stuff*/
+	
+.profile   ul {
+		position:absolute; 
+		left:0; 
+		display:none; /* Hide it by default */
+		margin:0 0 0 -1px; 
+		padding:0; 
+		list-style:none;
+			}
+
+
+.profile   ul li {
+		width:170px; 
+		float:left; 
+		border-top:none;
+	}
+		
+	
+
+/* Sub Cat menu link properties */
+	
+.profile  ul a {
+		display:block;    	/* Making sure a element covers whole li area */
+		height:15px;
+		padding:8px 7px 13px 7px; 
+		color:#fff;
+		text-decoration:none;	
+		border-top:none;
+		border-bottom:1px dashed #6B6B6B;
+	}
+
+
+.profile   ul a:hover {
+		color:#F2861D;
+	}
