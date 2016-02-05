@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 include("connection.php");
 
@@ -68,6 +69,8 @@ if (isset($_POST["login"])) // check which button is clicked
 }
 ?>
 
+=======
+>>>>>>> 2381f29f13cbd4d7de052200f2666903a97e0eb1
 <!DOCTYPE html>
 <html>
 <head>
@@ -140,7 +143,10 @@ input[type='button']:hover
 <div class="register_form">
 <br/>
 <img src="profilepicture.jpg" title="user" width="120px" style="border-style:solid;border-width:1px;margin-left:67px;margin-bottom:50px;"/>
+<<<<<<< HEAD
 <form name="loginfrm" method="POST">
+=======
+>>>>>>> 2381f29f13cbd4d7de052200f2666903a97e0eb1
 <table>
 <tr>
 <td>User Name</td>
@@ -159,12 +165,20 @@ input[type='button']:hover
 </tr>
 
 </table>
+<<<<<<< HEAD
 <input type="submit" name="login" value="login"style="margin-left:75px;margin-top:30px;width:50px;"> <input type="submit" name="cancel" value="cancel">
 </form>
+=======
+<input type="button" name="login" value="login"style="margin-left:75px;margin-top:30px;width:50px;"> <input type="button" name="cancel" value="cancel">
+>>>>>>> 2381f29f13cbd4d7de052200f2666903a97e0eb1
 </div>
 <div style=";background-color:black;height:1px;margin-top:310px;"></div>
 <div style=";background-color:#004c80;height:62px"><br/></div>
 </div>
 
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 2381f29f13cbd4d7de052200f2666903a97e0eb1
