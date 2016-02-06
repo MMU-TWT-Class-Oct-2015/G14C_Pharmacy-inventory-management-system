@@ -2,7 +2,7 @@
 
 include("connection.php");
 
-// save the session variable in another variable
+// get the session variable
 $sess_sid = $_SESSION["staff_id"];
 
 // finding the specific member record based on the session variable
@@ -13,13 +13,12 @@ if(!isset($_SESSION["staff_id"]))
 {
  header("location:homepage.php");
 }
-
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
 <title></title>
-
 <link rel="stylesheet" type="text/css" href="css.css"/>
 <style>
 .register_form
@@ -73,8 +72,42 @@ border:solid 2px ;
 margin-left:300px;
 margin-right:10px;
 margin-top:10px;
-
+height:800px;
 }
+
+.profile_detail input[type="password"], .profile_detail input[type="text"], .profile_detail input[type="email"], .profile_detail input[type="number"],select
+{
+	border-style:solid;
+	border-width:2px;
+	border-color:#383838;
+	border-radius:4px;
+	padding-left:40px;
+	margin: 10px 5px;
+	height:27px;
+	width:180px;
+}
+
+.profile_detail input[type='button']
+{
+	background-position:1px;
+	background-color:#66c2ff;
+	color:#000f1a;
+	border-width:1.5px;
+	border-color:#004c80;
+	border-radius:3px;
+	font-family:arial narrow;
+	width:120px;
+	font-size:18px;
+}
+
+.profile_detail input[type='button']:hover
+{
+	font-family:arial narrow;
+	background-color:#ccebff;
+	color:#002ecd;
+	border-color:#001f33;
+}
+
 
 </style>
 </head>
@@ -111,55 +144,31 @@ margin-top:10px;
 
 <div class="profile_detail">
 <div class="title">
-Profile
+Upload Image
 </div>
-<table>
-<tr>
-<td><img src="<?php echo $row["StaffImage"]; ?>" height="200px" width="200px"/></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><span style="font-weight:bold;">Full Name</span></td>
-<td>:</td>
-<td><?php echo $row["StaffName"]; ?></td>
-</tr>
-<tr>
-<td><span style="font-weight:bold;">User Name</td>
-<td>:</td>
-<td><?php echo $row["StaffUsername"]; ?></td>
-</tr>
-<tr>
-<td><span style="font-weight:bold;">Gender</span></td>
-<td>:</td>
-<td><?php echo $row["StaffGender"]; ?></td>
-</tr>
-<tr>
-<td><span style="font-weight:bold;">Age</span></td>
-<td>:</td>
-<td><?php echo $row["StaffAge"]; ?></td>
-</tr>
-<tr>
-<td><span style="font-weight:bold;">Email Address</span></td>
-<td>:</td>
-<td><?php echo $row["StaffEmail"]; ?></td>
-</tr>
-<tr>
-<td><span style="font-weight:bold;">IC</span></td>
-<td>:</td>
-<td><?php echo $row["StaffIC"]; ?></td>
-</tr>
-<tr>
-<td><span style="font-weight:bold;">Contact Number</span></td>
-<td>:</td>
-<td><?php echo $row["StaffContactNo"]; ?></td>
-</tr>
-</table>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+  <tabel>
+    <tr>
+      <td rowspan="3"><img src="<?php echo $row["StaffImage"]; ?>" height="200px" width="200px"/></td>
+    </tr>
+    <tr>
+    <td>Select image to upload</td>
+    <td>:</td>
+    </tr>
+    <tr>
+    <td><input type="file" name="file" ></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td><span style="margin-left:350px;"><input type="submit" value="Upload Image" name="submit"></td>
+    </tr>
+  </tabel>
+</form>
 </div>
 
-<div style=";background-color:black;height:1px;margin-top:418px;"></div>
+<div style=";background-color:black;height:1px;margin-top:40px;float:bottom;"></div>
 <div style=";background-color:#004c80;height:62px"><br/></div>
 </div>
-
 </body>
 </html>

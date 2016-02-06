@@ -9,12 +9,16 @@ $sess_sid = $_SESSION["staff_id"];
 $result = mysql_query("select * from staff where StaffID = $sess_sid");
 $row=mysql_fetch_assoc($result);
 
+$answer = mysql_query("select * from product");
+
 if(!isset($_SESSION["staff_id"]))
 {
  header("location:homepage.php");
 }
 
+$answer = mysql_query("select * from product")
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,8 +77,37 @@ border:solid 2px ;
 margin-left:300px;
 margin-right:10px;
 margin-top:10px;
-
+height:800px;
 }
+
+table
+{
+font-family:arial narrow;
+font-size:17px;
+margin-left:40px;
+margin-right:5px;
+margin-top:40px;
+margin-bottom:50px;
+border-collapse:collapse;
+text-align:center;
+}
+
+table th
+{
+background:#262626;
+color:#66c2ff;
+padding:5px;
+}
+
+table td
+{
+padding:5px;
+background:#e5f5ff;
+}
+
+
+
+
 
 </style>
 </head>
@@ -111,53 +144,37 @@ margin-top:10px;
 
 <div class="profile_detail">
 <div class="title">
-Profile
+Search
 </div>
-<table>
+<form>
+<table border="1">
 <tr>
-<td><img src="<?php echo $row["StaffImage"]; ?>" height="200px" width="200px"/></td>
-<td></td>
-<td></td>
+<th>No</th>
+<th>Code of medicine</th>
+<th>Name</th>
+<th>View all</th>
 </tr>
-<tr>
-<td><span style="font-weight:bold;">Full Name</span></td>
-<td>:</td>
-<td><?php echo $row["StaffName"]; ?></td>
-</tr>
-<tr>
-<td><span style="font-weight:bold;">User Name</td>
-<td>:</td>
-<td><?php echo $row["StaffUsername"]; ?></td>
-</tr>
-<tr>
-<td><span style="font-weight:bold;">Gender</span></td>
-<td>:</td>
-<td><?php echo $row["StaffGender"]; ?></td>
-</tr>
-<tr>
-<td><span style="font-weight:bold;">Age</span></td>
-<td>:</td>
-<td><?php echo $row["StaffAge"]; ?></td>
-</tr>
-<tr>
-<td><span style="font-weight:bold;">Email Address</span></td>
-<td>:</td>
-<td><?php echo $row["StaffEmail"]; ?></td>
-</tr>
-<tr>
-<td><span style="font-weight:bold;">IC</span></td>
-<td>:</td>
-<td><?php echo $row["StaffIC"]; ?></td>
-</tr>
-<tr>
-<td><span style="font-weight:bold;">Contact Number</span></td>
-<td>:</td>
-<td><?php echo $row["StaffContactNo"]; ?></td>
-</tr>
+  <?php
+  $count = 1;
+  while($row_answer = mysql_fetch_array($answer))
+  {
+    ?>
+
+    <tr>
+    <td><?php echo $count ?></td>
+    <td><?php echo $row_answer['ProductID']; ?></td>
+    <td><?php echo $row_answer['ProductName']; ?></td>
+    <td><a href="staff_Detailmedicine.php?pid=<?php echo $row_answer['ProductID'];?>">view</a></td>
+    </tr>
+    <?php
+    $count ++;
+  }
+ ?>
 </table>
+</form>
 </div>
 
-<div style=";background-color:black;height:1px;margin-top:418px;"></div>
+<div style=";background-color:black;height:1px;margin-top:40px;float:bottom;"></div>
 <div style=";background-color:#004c80;height:62px"><br/></div>
 </div>
 
