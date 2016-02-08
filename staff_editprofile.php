@@ -179,7 +179,7 @@ Edit Profile
 <tr>
 <td><span style="font-weight:bold;">User Name </span></td>
 <td>:</td>
-<td><input type="text" name="UserName" disabled value="<?php echo $row['StaffUsername']; ?>"/></td>
+<td><input type="text" name="UserName" value="<?php echo $row['StaffUsername']; ?>" readonly="readonly"/></td>
 </tr>
 <tr>
 <td><span style="font-weight:bold;">Age </span></td>
