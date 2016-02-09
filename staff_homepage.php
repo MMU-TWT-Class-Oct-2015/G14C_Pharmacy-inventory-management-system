@@ -103,7 +103,7 @@ margin-top:10px;
 <li><a href="staff_uploadImage.php"><span style="clear:both;">Upload Image</span></a></li>
 <li><a href="staff_searchitem.php"><span style="clear:both;">Search</span></a></li>
 <li><a href="staff_viewitem.php"><span style="clear:both;">View Item</span></a></li>
-<li><a href=""><span style="clear:both;">Log Out</span></a></li>
+<li><a href="logout.php"><span style="clear:both;">Log Out</span></a></li>
 
 </div>
 

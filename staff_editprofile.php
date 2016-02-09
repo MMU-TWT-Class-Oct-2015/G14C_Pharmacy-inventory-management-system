@@ -159,7 +159,7 @@ margin-top:10px;
 <li><a href="staff_uploadImage.php"><span style="clear:both;">Upload Image</span></a></li>
 <li><a href="staff_searchitem.php"><span style="clear:both;">Search</span></a></li>
 <li><a href="staff_viewitem.php"><span style="clear:both;">View Item</span></a></li>
-<li><a href=""><span style="clear:both;">Log Out</span></a></li>
+<li><a href="logout.php"><span style="clear:both;">Log Out</span></a></li>
 
 </div>
 
@@ -199,7 +199,7 @@ Edit Profile
 <tr>
 <td><span style="font-weight:bold;">Gender </span></td>
 <td>:</td>
-<td> <input type="text" name="gender" disabled value="<?php echo $row['StaffGender']; ?>"/><span id="four"style="font-size:14px;font-weight:bolder;color:red;"></span></td>
+<td> <input type="text" name="gender" readonly="readonly" value="<?php echo $row['StaffGender']; ?>"/><span id="four"style="font-size:14px;font-weight:bolder;color:red;"></span></td>
 </tr>
 <tr>
 <td><span style="font-weight:bold;">Contact Number </span></td>

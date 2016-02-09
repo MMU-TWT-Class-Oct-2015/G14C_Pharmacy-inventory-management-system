@@ -22,7 +22,7 @@ $result2 = mysql_query("select * from product where ProductID = '$pid' ");
 $row_answer = mysql_fetch_assoc($result2);
 
 $image=$row_answer["ProductImage"];
-$code=$row_answer["ProductID"];
+$code=$row_answer["ProductCode"];
 $name=$row_answer["ProductName"];
 $quantity=$row_answer["ProductQuantity"];
 $price=$row_answer['ProductPrice'];
@@ -158,7 +158,7 @@ height:800px;
 <li><a href="staff_uploadImage.php"><span style="clear:both;">Upload Image</span></a></li>
 <li><a href="staff_searchitem.php"><span style="clear:both;">Search</span></a></li>
 <li><a href="staff_viewitem.php"><span style="clear:both;">View Item</span></a></li>
-<li><a href=""><span style="clear:both;">Log Out</span></a></li>
+<li><a href="logout.php"><span style="clear:both;">Log Out</span></a></li>
 
 </div>
 

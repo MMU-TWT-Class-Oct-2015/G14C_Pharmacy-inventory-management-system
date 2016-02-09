@@ -15,8 +15,6 @@ if(!isset($_SESSION["staff_id"]))
 {
  header("location:homepage.php");
 }
-
-$answer = mysql_query("select * from product")
 ?>
 
 <!DOCTYPE html>
@@ -136,7 +134,7 @@ background:#e5f5ff;
 <li><a href="staff_uploadImage.php"><span style="clear:both;">Upload Image</span></a></li>
 <li><a href="staff_searchitem.php"><span style="clear:both;">Search</span></a></li>
 <li><a href="staff_viewitem.php"><span style="clear:both;">View Item</span></a></li>
-<li><a href=""><span style="clear:both;">Log Out</span></a></li>
+<li><a href="logout.php"><span style="clear:both;">Log Out</span></a></li>
 
 </div>
 
@@ -144,7 +142,7 @@ background:#e5f5ff;
 
 <div class="profile_detail">
 <div class="title">
-Search
+View Items
 </div>
 <form>
 <table border="1">
@@ -162,9 +160,9 @@ Search
 
     <tr>
     <td><?php echo $count ?></td>
-    <td><?php echo $row_answer['ProductID']; ?></td>
+    <td><?php echo $row_answer['ProductCode']; ?></td>
     <td><?php echo $row_answer['ProductName']; ?></td>
-    <td><a href="staff_Detailmedicine.php?pid=<?php echo $row_answer['ProductID'];?>">view</a></td>
+    <td><a href="staff_detailmedicine.php?pid=<?php echo $row_answer['ProductID'];?>">view</a></td>
     </tr>
     <?php
     $count ++;
