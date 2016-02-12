@@ -1,3 +1,23 @@
+<?php
+
+include("connection.php");
+
+// save the session variable in another variable
+$sess_aid = $_SESSION["ad_id"];
+
+// finding the specific member record based on the session variable
+$result = mysql_query("select * from admin where AdminID = $sess_aid");
+$row=mysql_fetch_assoc($result);
+
+if(!isset($_SESSION["ad_id"]))
+{
+ header("location:homepage.php");
+}
+if(isset($_POST["btnadd"]))
+{
+
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,7 +101,7 @@ height:700px;
 	border-radius:3px;
 	font-family:arial narrow;
 	width:120px;
-	font-size:18px;	
+	font-size:18px;
 	margin-left:10px;
 	margin-top:110px;
 }
@@ -107,23 +127,24 @@ height:700px;
 <br/>
 <br/>
 <div style=";background-color:black; 	height:1px;"></div>
-<div style=";background-color:#004c80;height:40px;font-weight:bold;color:#ffffff;font-size:15px;"><br/>Admin UserName:<span style="float:right;">Date:22/2/2016</span></div>
+<div style=";background-color:#004c80;height:40px;font-weight:bold;color:#ffffff;font-size:15px;"><br/>Admin UserName:<?php echo $row["AdminUsername"]; ?><span style="float:right;">Date:<?php date_default_timezone_set("Asia/Kuala_Lumpur");echo date("d-m-Y H:i:s");?></span></div>
 <div style=";background-color:black; height:1px;"></div>
 
 
 <ul class="profile">
-	
+
 <div class="leftprofile">
-<li><a href="admin_homepage.html"><span style="clear:both;">Profile</span></a></li>
-	
-<li><a href="admin_editprofile.html"><span style="clear:both;">Edit Profile</span></a>
+<li><a href="admin_homepage.php"><span style="clear:both;">Profile</span></a></li>
+
+<li><a href="admin_editprofile.php"><span style="clear:both;">Edit Profile</span></a>
 </li>
-	
-<li><a href="admin_additem.html"><span style="clear:both;">Add Item</span></a></li>
-<li><a href="admin_edititem.html"><span style="clear:both;">Edit Item</span></a></li>
-<li><a href="admin_deleteitem.html"><span style="clear:both;">Delete Item</span></a></li>
-<li><a href="admin_viewitemsale.html"><span style="clear:both;">View Item sale</span></a></li>
-<li><a href=""><span style="clear:both;">Log Out</span></a></li>
+<li><a href="admin_addstaff.php"><span style="clear:both;">Add Staff</span></a></li>
+<li><a href="admin_additem.php"><span style="clear:both;">Add Item</span></a></li>
+<li><a href="admin_edititem.php"><span style="clear:both;">Edit Item</span></a></li>
+<li><a href="admin_deleteitem.php"><span style="clear:both;">Delete Item</span></a></li>
+<li><a href="admin_viewitem.php"><span style="clear:both;">View Item</span></a></li>
+<li><a href="admin_viewitemsale.php"><span style="clear:both;">View Item sale</span></a></li>
+<li><a href="logout.php"><span style="clear:both;">Log Out</span></a></li>
 
 </div>
 
@@ -133,12 +154,12 @@ height:700px;
 <div class="title">
 Add Item
 </div>
-<form>
+<form method="POST" name="AddFrm" enctype="multipart/form-data" action="admin_upload.php">
 <table>
 <tr>
 <td><span style="font-weight:bold;">Product Picture</span></td>
 <td>:</td>
-<td>upload photo function</td>
+<td><input type="file" name="file" /></td>
 </tr>
 <tr>
 <td><span style="font-weight:bold;">Code Of Medicine</span></td>
@@ -151,7 +172,7 @@ Add Item
 <td> <input type="text" name="name" placeholder="Product Name"/></td>
 </tr>
 <tr>
-<td><span style="font-weight:bold;">quantity</span></td>
+<td><span style="font-weight:bold;">Quantity</span></td>
 <td>:</td>
 <td> <input type="number" name="number" placeholder="Number"/></td>
 </tr>
@@ -163,12 +184,12 @@ Add Item
 <tr>
 <td><span style="font-weight:bold;">Description</span></td>
 <td>:</td>
-<td><textarea name="description" placeholder="description"></textarea><td>
+<td><textarea name="description" placeholder="description"/></textarea><td>
 </tr>
 <tr>
 <td></td>
 <td></td>
-<td><input type="button" name="btnadd" value="add" /><input type="button" name="btncancel" value="Cancel"/></td>
+<td><input type="submit" name="btnadd" value="add" /><input type="submit" name="btncancel" value="Cancel"/></td>
 </tr>
 </table>
 </form>

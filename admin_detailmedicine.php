@@ -1,3 +1,40 @@
+<?php
+
+include("connection.php");
+
+// save the session variable in another variable
+$sess_aid = $_SESSION["ad_id"];
+
+// finding the specific member record based on the session variable
+$result = mysql_query("select * from admin where AdminID = $sess_aid");
+$row=mysql_fetch_assoc($result);
+
+if(!isset($_SESSION["ad_id"]))
+{
+ header("location:homepage.php");
+}
+
+if(isset($_GET['pid']))
+{
+$pid = $_GET["pid"];
+$result2 = mysql_query("select * from product where ProductID = '$pid' ");
+$row_answer = mysql_fetch_assoc($result2);
+
+$image=$row_answer["ProductImage"];
+$code=$row_answer["ProductCode"];
+$name=$row_answer["ProductName"];
+$quantity=$row_answer["ProductQuantity"];
+$price=$row_answer['ProductPrice'];
+$info=$row_answer['ProductDescription'];
+}
+
+?>
+<?php
+if(isset($_POST["Back"]))
+{
+ header("location:admin_viewitem.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,7 +105,7 @@ height:700px;
 	padding-left:40px;
 	margin: 10px 5px;
 	height:27px;
-	width:150px;
+	width:180px;
 }
 
 .profile_detail input[type='button']
@@ -81,7 +118,9 @@ height:700px;
 	border-radius:3px;
 	font-family:arial narrow;
 	width:120px;
-	font-size:18px;	
+	font-size:18px;
+	margin-left:10px;
+	margin-top:110px;
 }
 
 .profile_detail input[type='button']:hover
@@ -105,23 +144,24 @@ height:700px;
 <br/>
 <br/>
 <div style=";background-color:black; 	height:1px;"></div>
-<div style=";background-color:#004c80;height:40px;font-weight:bold;color:#ffffff;font-size:15px;"><br/>Admin UserName:<span style="float:right;">Date:22/2/2016</span></div>
+<div style=";background-color:#004c80;height:40px;font-weight:bold;color:#ffffff;font-size:15px;"><br/>Admin UserName:<?php echo $row["AdminUsername"]; ?><span style="float:right;">Date:<?php date_default_timezone_set("Asia/Kuala_Lumpur");echo date("d-m-Y H:i:s");?></span></div>
 <div style=";background-color:black; height:1px;"></div>
 
 
 <ul class="profile">
-	
+
 <div class="leftprofile">
-<li><a href="admin_homepage.html"><span style="clear:both;">Profile</span></a></li>
-	
-<li><a href="admin_editprofile.html"><span style="clear:both;">Edit Profile</span></a>
+<li><a href="admin_homepage.php"><span style="clear:both;">Profile</span></a></li>
+
+<li><a href="admin_editprofile.php"><span style="clear:both;">Edit Profile</span></a>
 </li>
-	
-<li><a href="admin_additem.html"><span style="clear:both;">Add Item</span></a></li>
-<li><a href="admin_edititem.html"><span style="clear:both;">Edit Item</span></a></li>
-<li><a href="admin_deleteitem.html"><span style="clear:both;">Delete Item</span></a></li>
-<li><a href="admin_viewitemsale.html"><span style="clear:both;">View Item sale</span></a></li>
-<li><a href=""><span style="clear:both;">Log Out</span></a></li>
+<li><a href="admin_addstaff.php"><span style="clear:both;">Add Staff</span></a></li>
+<li><a href="admin_additem.php"><span style="clear:both;">Add Item</span></a></li>
+<li><a href="admin_edititem.php"><span style="clear:both;">Edit Item</span></a></li>
+<li><a href="admin_deleteitem.php"><span style="clear:both;">Delete Item</span></a></li>
+<li><a href="admin_viewitem.php"><span style="clear:both;">View Item</span></a></li>
+<li><a href="admin_viewitemsale.php"><span style="clear:both;">View Item sale</span></a></li>
+<li><a href="logout.php"><span style="clear:both;">Log Out</span></a></li>
 
 </div>
 
@@ -129,62 +169,45 @@ height:700px;
 
 <div class="profile_detail">
 <div class="title">
-Search
+View Items
 </div>
-<form>
+<form method="post">
 <table>
 <tr>
-<td><span style="font-weight:bold;">Search By  </span></td>
-<td>:</td>
-<td><select name="searchby">
-<option value="Code of medicine">Code of medicine</option>
-<option value="Name">Name</option>
-</select>
-</td>
-</tr>
-<tr>
-<td><input type="text" name="search"></td>
-<td></td>
-<td><input type="button" name="btnsearch" value="Search"/></td>
-</tr>
-<tr>
-<td><img src="profilepicture.jpg" title="user" width="120px" style="border-style:solid;border-width:1px;margin-top:100px;"/></td>
-<td></td>
-<td></td>
+<td colspan="3"><img src="<?php echo $image ?>" title="Item" width="200px" height="200px" style="border-style:solid;border-width:1px;margin-top:80px;"/></td>
 </tr>
 <tr>
 <td><span style="font-weight:bold;">Code of medicine</span></td>
 <td>:</td>
-<td></td>
+<td><?php echo $code; ?></td>
 </tr>
 <tr>
 <td><span style="font-weight:bold;">Name</span> </td>
 <td>:</td>
-<td></td>
+<td><?php echo $name; ?></td>
 </tr>
 <tr>
 <td><span style="font-weight:bold;">Price</span></td>
 <td>:</td>
-<td></td>
+<td>RM <?php echo $price; ?></td>
 </tr>
 <tr>
 <td><span style="font-weight:bold;">Quantity</span></td>
 <td>:</td>
-<td></td>
+<td><?php echo $quantity; ?></td>
 </tr>
 <tr>
-<td><span style="font-weight:bold;">Decription</span></td>
+<td><span style="font-weight:bold;">Description</span></td>
 <td>:</td>
-<td></td>
+<td><?php echo $info; ?></td>
 </tr>
 <tr>
 <td></td>
 <td></td>
-<td><span style="margin-left:150px;"><input type="button" name="Delete" value="Delete"/> <input type="button" name="Cancel" value="Cancel"/></span></td>
+<td><span style="margin-left:350px;"><input type="submit" name="Back" value="Back"/></span></td>
 </tr>
 </table>
 </form>
-</div>
 
 <div style=";background-color:black;height:1px;margin-top:140px;"></div>
 <div style=";background-color:#004c80;height:62px"><br/></div>

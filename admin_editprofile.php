@@ -1,3 +1,33 @@
+<?php
+
+include("connection.php");
+
+// save the session variable in another variable
+$sess_aid = $_SESSION["ad_id"];
+
+// finding the specific member record based on the session variable
+$result = mysql_query("select * from admin where AdminID = $sess_aid");
+$row=mysql_fetch_assoc($result);
+
+if(!isset($_SESSION["ad_id"]))
+{
+ header("location:homepage.php");
+}
+
+if(isset($_POST["btnupdate"]))
+{
+  $name = $_POST["fullname"];
+  $email =$_POST["email"];
+
+  mysql_query("update admin set AdminName = '$name', AdminEmail = '$email' where AdminID = $sess_aid");
+  header("location:admin_homepage.php");
+}
+
+if(isset($_POST["btncancel"]))
+{
+  header("location:admin_homepage.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,7 +111,7 @@ height:500px;
 	border-radius:3px;
 	font-family:arial narrow;
 	width:120px;
-	font-size:18px;	
+	font-size:18px;
 	margin-left:10px;
 	margin-top:110px;
 }
@@ -107,23 +137,24 @@ height:500px;
 <br/>
 <br/>
 <div style=";background-color:black; 	height:1px;"></div>
-<div style=";background-color:#004c80;height:40px;font-weight:bold;color:#ffffff;font-size:15px;"><br/>Admin UserName:<span style="float:right;">Date:22/2/2016</span></div>
+<div style=";background-color:#004c80;height:40px;font-weight:bold;color:#ffffff;font-size:15px;"><br/>Admin UserName:<?php echo $row["AdminUsername"]; ?><span style="float:right;">Date:<?php date_default_timezone_set("Asia/Kuala_Lumpur");echo date("d-m-Y H:i:s");?></span></div>
 <div style=";background-color:black; height:1px;"></div>
 
 
 <ul class="profile">
-	
+
 <div class="leftprofile">
-<li><a href="admin_homepage.html"><span style="clear:both;">Profile</span></a></li>
-	
-<li><a href="admin_editprofile.html"><span style="clear:both;">Edit Profile</span></a>
+<li><a href="admin_homepage.php"><span style="clear:both;">Profile</span></a></li>
+
+<li><a href="admin_editprofile.php"><span style="clear:both;">Edit Profile</span></a>
 </li>
-	
-<li><a href="admin_additem.html"><span style="clear:both;">Add Item</span></a></li>
-<li><a href="admin_edititem.html"><span style="clear:both;">Edit Item</span></a></li>
-<li><a href="admin_deleteitem.html"><span style="clear:both;">Delete Item</span></a></li>
-<li><a href="admin_viewitemsale.html"><span style="clear:both;">View Item sale</span></a></li>
-<li><a href=""><span style="clear:both;">Log Out</span></a></li>
+<li><a href="admin_addstaff.php"><span style="clear:both;">Add Staff</span></a></li>
+<li><a href="admin_additem.php"><span style="clear:both;">Add Item</span></a></li>
+<li><a href="admin_edititem.php"><span style="clear:both;">Edit Item</span></a></li>
+<li><a href="admin_deleteitem.php"><span style="clear:both;">Delete Item</span></a></li>
+<li><a href="admin_viewitem.php"><span style="clear:both;">View Item</span></a></li>
+<li><a href="admin_viewitemsale.php"><span style="clear:both;">View Item sale</span></a></li>
+<li><a href="logout.php"><span style="clear:both;">Log Out</span></a></li>
 
 </div>
 
@@ -133,27 +164,27 @@ height:500px;
 <div class="title">
 Edit Profile
 </div>
-<form>
+<form method="post">
 <table>
 <tr>
 <td><span style="font-weight:bold;">Full Name  </span></td>
 <td>:</td>
-<td><input type="text" name="fullname" placeholder="Your full name" value=""/><span id="one"style="font-size:14px;font-weight:bolder;color:red;"></span></td>
+<td><input type="text" name="fullname" placeholder="Your full name" value="<?php echo $row["AdminName"] ?>"/><span id="one"style="font-size:14px;font-weight:bolder;color:red;"></span></td>
 </tr>
 <tr>
 <td><span style="font-weight:bold;">User Name </span></td>
 <td>:</td>
-<td><input type="text" name="UserName" placeholder="Your Name" disabled /></td>
+<td><input type="text" name="UserName" placeholder="Your Username" value="<?php echo $row["AdminUsername"] ?>" readonly="readonly" /></td>
 </tr>
 <tr>
 <td><span style="font-weight:bold;">Email address </span></td>
 <td>:</td>
-<td> <input type="text" name="email" placeholder="email"/><span id="four"style="font-size:14px;font-weight:bolder;color:red;"></span></td>
+<td> <input type="text" name="email" placeholder="Your Email Address" value="<?php echo $row["AdminEmail"] ?>"/><span id="four"style="font-size:14px;font-weight:bolder;color:red;"></span></td>
 </tr>
 <tr>
 <td></td>
 <td></td>
-<td><input type="button" name="btnupdate" value="Update" onclick="return update();"/><input type="button" name="btncancel" value="Cancel"/></td>
+<td><input type="submit" name="btnupdate" value="Update"/><input type="submit" name="btncancel" value="Cancel"/></td>
 </tr>
 </table>
 </form>
