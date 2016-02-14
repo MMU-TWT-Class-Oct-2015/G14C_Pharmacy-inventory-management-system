@@ -65,6 +65,39 @@ input[type='button']:hover
 	border-color:#001f33;
 }
 </style>
+<script type="text/javascript">
+function validate() {
+	if (document.registerfrm.fullname.value == "") {
+		alert ("Enter your name!");
+		document.registerfrm.fullname.value.focus();
+		return false;
+	}
+  if (document.registerfrm.UserName.value == "") {
+    alert ("Enter your preferable username")
+    document.registerfrm.value.focus();
+  }
+	if (!/^[a-zA-Z]*$/g.test(document.registerfrm.fullname.value)){
+		alert("Enter alphabets only!");
+		document.registerfrm.name.focus();
+		return false;
+	}
+	if (document.registerfrm.age.value =="") || isNaN(document.registerfrm.age.value) {
+		alert ("Enter your age / Numeric only!");
+		document.registerfrm.age.value.focus();
+		return false;
+	}
+	if (document.registerfrm.identification.value == "") || isNaN(document.registerfrm.identification.value) || document.registerfrm.identification.value.length != 12 ) {
+		alert("Please enter your IC in 12 NUMERIC!");
+		document.registerfrm.identification.focus();
+		return false;
+	}
+	if (document.registerfrm.contactNumber.value == "") || isNaN(document.registerfrm.contactNumber.value){
+		alert("Please enter your Contact Number!")
+		document.registerfrm.contactNumber.focus();
+		return false;
+	}
+}
+</script>
 </head>
 <body>
 <div style="border:black 2px solid;height:1122px;width:1020px;margin-left:200px;background-color:#e5f5ff">
@@ -92,7 +125,7 @@ input[type='button']:hover
 <div class="register_form">
 <br/>
 <img src="profilepicture.jpg" title="user" width="120px" style="border-style:solid;border-width:1px;margin-left:67px;margin-bottom:50px;"/>
-<form name="registerfrm" method="POST">
+<form name="registerfrm" method="POST" onsubmit="return validate()">
 <table>
 <tr>
   <td><span style="font-weight:bold;">Full Name  </span></td>
@@ -136,7 +169,7 @@ input[type='button']:hover
   <td> <input type="text" name="contactNumber" placeholder="Your Contact Number"/><span id="four"style="font-size:14px;font-weight:bolder;color:red;"></span></td>
   </tr>
 </table>
-<input type="submit" name="register" value="Register"> <input type="submit" name="cancel" value="cancel"> 
+<input type="submit" name="register" value="Register"> <input type="submit" name="cancel" value="cancel">
 </form>
 </div>
 <div style=";background-color:black;height:1px;margin-top:310px;"></div>
