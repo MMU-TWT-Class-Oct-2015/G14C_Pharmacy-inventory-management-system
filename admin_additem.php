@@ -115,6 +115,30 @@ height:700px;
 }
 
 </style>
+<script type="text/javascript">
+function validate() {
+	if (document.Addfrm.Name.value == "") {
+		alert ("Please enter the product name");
+		document.Addfrm.Name.value.focus();
+		return false;
+	}
+	if ((document.Addfrm.number.value =="") || isNaN(document.Addfrm.number.value)) {
+		alert ("Please enter the product quantity");
+		document.Addfrm.number.value.focus();
+		return false;
+	}
+	if ((document.Addfrm.price.value == "") || isNaN(document.Addfrm.price.value)) {
+		alert("Please enter the price of the product");
+		document.Addfrm.price.focus();
+		return false;
+	}
+	if (document.Addfrm.Description.value == "") {
+		alert("Please descript the product in the description box")
+		document.Addfrm.Description.focus();
+		return false;
+	}
+}
+</script>
 </head>
 <body>
 <div style="border:black 2px solid;height:1122px;width:1020px;margin-left:200px;background-color:#e5f5ff">
@@ -169,7 +193,7 @@ Add Item
 <tr>
 <td><span style="font-weight:bold;">Name</span></td>
 <td>:</td>
-<td> <input type="text" name="name" placeholder="Product Name"/></td>
+<td> <input type="text" name="Name" placeholder="Product Name"/></td>
 </tr>
 <tr>
 <td><span style="font-weight:bold;">Quantity</span></td>
@@ -184,7 +208,7 @@ Add Item
 <tr>
 <td><span style="font-weight:bold;">Description</span></td>
 <td>:</td>
-<td><textarea name="description" placeholder="description"/></textarea><td>
+<td><textarea name="Description" placeholder="Description"/></textarea><td>
 </tr>
 <tr>
 <td></td>
