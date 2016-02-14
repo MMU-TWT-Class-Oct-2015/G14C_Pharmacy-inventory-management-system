@@ -80,7 +80,7 @@ margin-top:10px;
 	border-radius:3px;
 	font-family:arial narrow;
 	width:120px;
-	font-size:18px;	
+	font-size:18px;
 	margin-left:10px;
 	margin-top:110px;
 }
@@ -94,6 +94,35 @@ margin-top:10px;
 }
 
 </style>
+<script type="text/javascript">
+function validate() {
+	if (document.form.fullname.value == "") {
+		alert ("Enter your name!");
+		document.form.fullname.value.focus();
+		return false;
+	}
+	if (!/^[a-zA-Z]*$/g.test(document.form.fullname.value)){
+		alert("Enter alphabets only!");
+		document.form.name.focus();
+		return false;
+	}
+	if (document.form.age.value =="") || isNaN(document.form.age.value) {
+		alert ("Enter your age / Numeric only!");
+		document.form.age.value.focus();
+		return false;
+	}
+	if (document.form.identification.value == "") || isNaN(document.form.identification.value) || document.form.identification.value.length != 12 ) {
+		alert("Please enter your IC in 12 NUMERIC!");
+		document.form.identification.focus();
+		return false;
+	}
+	if (document.form.contactNumber.value == "") || isNaN(document.form.contactNumber.value){
+		alert("Please enter your Contact Number!")
+		document.form.contactNumber.focus();
+		return false;
+	}
+}
+</script>
 </head>
 <body>
 <div style="border:black 2px solid;height:1122px;width:1020px;margin-left:200px;background-color:#e5f5ff">
@@ -111,13 +140,13 @@ margin-top:10px;
 
 
 <ul class="profile">
-	
+
 <div class="leftprofile">
 <li><a href="staff_homepage.html"><span style="clear:both;">Profile</span></a></li>
-	
+
 <li><a href="staff_editProfile.html"><span style="clear:both;">Edit Profile</span></a>
 </li>
-	
+
 <li><a href="staff_searchitem.html"><span style="clear:both;">Search</span></a></li>
 <li><a href="staff_viewitem.html"><span style="clear:both;">View Item</span></a></li>
 <li><a href=""><span style="clear:both;">Log Out</span></a></li>
@@ -130,7 +159,7 @@ margin-top:10px;
 <div class="title">
 Edit Profile
 </div>
-<form>
+<form name="form" method="post" onsubmit ="return validate()">
 <table>
 <tr>
 <td><span style="font-weight:bold;">Full Name  </span></td>
