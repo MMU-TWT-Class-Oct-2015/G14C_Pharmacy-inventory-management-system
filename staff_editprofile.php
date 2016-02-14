@@ -138,27 +138,27 @@ margin-top:10px;
 <script type="text/javascript">
 function validate() {
 	if (document.editfrm.fullname.value == "") {
-		alert ("Enter your name!");
+		alert ("Name: Enter your name!");
 		document.editfrm.fullname.value.focus();
 		return false;
 	}
 	if (!/^[a-zA-Z]*$/g.test(document.editfrm.fullname.value)){
-		alert("Enter alphabets only!");
+		alert("Name: Enter alphabets only!");
 		document.editfrm.name.focus();
 		return false;
 	}
-	if (document.editfrm.age.value =="") || isNaN(document.editfrm.age.value) {
-		alert ("Enter your age / Numeric only!");
+	if ((document.editfrm.age.value =="") || isNaN(document.editfrm.age.value)) {
+		alert ("Age: Enter your age / Numeric only!");
 		document.editfrm.age.value.focus();
 		return false;
 	}
-	if (document.editfrm.identification.value == "") || isNaN(document.editfrm.identification.value) || document.editfrm.identification.value.length != 12 ) {
-		alert("Please enter your IC in 12 NUMERIC!");
+	if ((document.editfrm.identification.value == "") || isNaN(document.editfrm.identification.value) || document.editfrm.identification.value.length != 12 ) {
+		alert("IC: Please enter your IC in 12 NUMERIC!");
 		document.editfrm.identification.focus();
 		return false;
 	}
-	if (document.editfrm.contactNumber.value == "") || isNaN(document.editfrm.contactNumber.value){
-		alert("Please enter your Contact Number!")
+	if ((document.editfrm.contactNumber.value == "") || isNaN(document.editfrm.contactNumber.value)) {
+		alert("Phone: Please enter your Contact Number!")
 		document.editfrm.contactNumber.focus();
 		return false;
 	}
@@ -200,7 +200,7 @@ function validate() {
 <div class="title">
 Edit Profile
 </div>
-<form name="editfrm" method="post" onsubmit="return validate()">
+<form name="editfrm" method="post">
 <table>
 <tr>
 <td><span style="font-weight:bold;">Full Name  </span></td>
@@ -240,7 +240,7 @@ Edit Profile
 <tr>
 <td></td>
 <td></td>
-<td><input type="submit" name="btnupdate" value="Update" onclick="return update();"/><input type="submit" name="btncancel" value="Cancel"/></td>
+<td><input type="submit" name="btnupdate" value="Update" onclick="return update();" onsubmit="return validate()"/><input type="submit" name="btncancel" value="Cancel"/></td>
 </tr>
 </table>
 </form>
