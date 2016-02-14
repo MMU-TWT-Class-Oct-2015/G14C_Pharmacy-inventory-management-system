@@ -196,7 +196,7 @@ function validate(){
 <div class="title">
 Search
 </div>
-<form name="searchfrm" method="POST" onsubmit="return validate()">
+<form name="searchfrm" method="POST">
 <table>
 <tr>
 <td><span style="font-weight:bold;">Search By  </span></td>
@@ -210,7 +210,7 @@ Search
 <tr>
 <td><input type="text" name="search"></td>
 <td></td>
-<td><input type="submit" name="btnupdate" value="Search"/></td>
+<td><input type="submit" name="btnupdate" value="Search" onsubmit="return validate()"/></td>
 </tr>
 <?php
 if(isset($_POST["btnupdate"]))
