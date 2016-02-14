@@ -94,35 +94,7 @@ margin-top:10px;
 }
 
 </style>
-<script type="text/javascript">
-function validate() {
-	if (document.form.fullname.value == "") {
-		alert ("Enter your name!");
-		document.form.fullname.value.focus();
-		return false;
-	}
-	if (!/^[a-zA-Z]*$/g.test(document.form.fullname.value)){
-		alert("Enter alphabets only!");
-		document.form.name.focus();
-		return false;
-	}
-	if (document.form.age.value =="") || isNaN(document.form.age.value) {
-		alert ("Enter your age / Numeric only!");
-		document.form.age.value.focus();
-		return false;
-	}
-	if (document.form.identification.value == "") || isNaN(document.form.identification.value) || document.form.identification.value.length != 12 ) {
-		alert("Please enter your IC in 12 NUMERIC!");
-		document.form.identification.focus();
-		return false;
-	}
-	if (document.form.contactNumber.value == "") || isNaN(document.form.contactNumber.value){
-		alert("Please enter your Contact Number!")
-		document.form.contactNumber.focus();
-		return false;
-	}
-}
-</script>
+
 </head>
 <body>
 <div style="border:black 2px solid;height:1122px;width:1020px;margin-left:200px;background-color:#e5f5ff">
@@ -159,7 +131,7 @@ function validate() {
 <div class="title">
 Edit Profile
 </div>
-<form name="form" method="post" onsubmit ="return validate()">
+<form>
 <table>
 <tr>
 <td><span style="font-weight:bold;">Full Name  </span></td>
