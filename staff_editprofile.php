@@ -142,7 +142,7 @@ function validate() {
 		document.editfrm.fullname.value.focus();
 		return false;
 	}
-	if (!/^[a-zA-Z]*$/g.test(document.editfrm.fullname.value)){
+	if (!/^[a-zA-Z\s]*$/g.test(document.editfrm.fullname.value)){
 		alert("Name: Enter alphabets only!");
 		document.editfrm.name.focus();
 		return false;

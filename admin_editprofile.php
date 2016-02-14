@@ -125,6 +125,27 @@ height:500px;
 }
 
 </style>
+<script type="text/javascript">
+function validate() {
+	if (document.Editfrm.fullname.value == "") {
+		alert ("Name: Enter your name!");
+		document.Editfrm.fullname.value.focus();
+		return false;
+	}
+	if (!/^[a-zA-Z\s]*$/g.test(document.Editfrm.fullname.value)){
+		alert("Name: Enter alphabets only!");
+		document.Editfrm.name.focus();
+		return false;
+	}
+
+	if ((document.Editfrm.email.value == "") || {
+		alert("Email: Please enter your email address!")
+		document.Editfrm.contactNumber.focus();
+		return false;
+	}
+}
+</script>
+
 </head>
 <body>
 <div style="border:black 2px solid;height:1122px;width:1020px;margin-left:200px;background-color:#e5f5ff">
@@ -164,7 +185,7 @@ height:500px;
 <div class="title">
 Edit Profile
 </div>
-<form method="post">
+<form method="post" name="Editfrm">
 <table>
 <tr>
 <td><span style="font-weight:bold;">Full Name  </span></td>
