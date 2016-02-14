@@ -134,6 +134,37 @@ margin-top:10px;
 }
 
 </style>
+
+<script type="text/javascript">
+function validate() {
+	if (document.editfrm.fullname.value == "") {
+		alert ("Enter your name!");
+		document.editfrm.fullname.value.focus();
+		return false;
+	}
+	if (!/^[a-zA-Z]*$/g.test(document.editfrm.fullname.value)){
+		alert("Enter alphabets only!");
+		document.editfrm.name.focus();
+		return false;
+	}
+	if (document.editfrm.age.value =="") || isNaN(document.editfrm.age.value) {
+		alert ("Enter your age / Numeric only!");
+		document.editfrm.age.value.focus();
+		return false;
+	}
+	if (document.editfrm.identification.value == "") || isNaN(document.editfrm.identification.value) || document.editfrm.identification.value.length != 12 ) {
+		alert("Please enter your IC in 12 NUMERIC!");
+		document.editfrm.identification.focus();
+		return false;
+	}
+	if (document.editfrm.contactNumber.value == "") || isNaN(document.editfrm.contactNumber.value){
+		alert("Please enter your Contact Number!")
+		document.editfrm.contactNumber.focus();
+		return false;
+	}
+}
+</script>
+
 </head>
 <body>
 <div style="border:black 2px solid;height:1122px;width:1020px;margin-left:200px;background-color:#e5f5ff">
@@ -169,7 +200,7 @@ margin-top:10px;
 <div class="title">
 Edit Profile
 </div>
-<form name="editfrm" method="post">
+<form name="editfrm" method="post" onsubmit="return validate()">
 <table>
 <tr>
 <td><span style="font-weight:bold;">Full Name  </span></td>

@@ -151,6 +151,15 @@ height:800px;
 
 
 </style>
+<script>
+function validate(){
+  if (document.searchfrm.search.value = "") {
+    alert("Key in the code or the name of the medicine");
+    document.searchfrm.search.value.focus();
+    return false;
+  }
+}
+</script>
 </head>
 <body>
 <div style="border:black 2px solid;height:1122px;width:1020px;margin-left:200px;background-color:#e5f5ff">
@@ -187,7 +196,7 @@ height:800px;
 <div class="title">
 Search
 </div>
-<form name="searchfrm" method="POST">
+<form name="searchfrm" method="POST" onsubmit="return validate()">
 <table>
 <tr>
 <td><span style="font-weight:bold;">Search By  </span></td>
