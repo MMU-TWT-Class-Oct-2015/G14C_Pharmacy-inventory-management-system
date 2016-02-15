@@ -27,7 +27,22 @@
 Login page:
 ![Login](http://i.imgur.com/ENigNxF.png)
 
+Staff page:
+![Staff profile](http://i.imgur.com/2VfI1zt.png)
+![Staff edit profile](http://i.imgur.com/UBVZ85D.png)
+![Staff upload image](http://i.imgur.com/mDY9WvS.png)
+![Staff search item](http://i.imgur.com/o0pWRgZ.png)
+![Staff view item](http://i.imgur.com/UK8ojGe.png)
+![Staff item details](http://i.imgur.com/kiN0Cwt.png)
 
+Admin page:
+![Admin profile](http://i.imgur.com/plgy3Hp.png)
+![Admin edit profile](http://i.imgur.com/S6cRrF5.png)
+![Admin add item](http://i.imgur.com/QcOw3Qq.png)
+![Admin edit item](http://i.imgur.com/YADlULg.png)
+![Admin delete item](http://i.imgur.com/GKjACSz.png)
+![Admin view item](http://i.imgur.com/yAsINR8.png)
+![Admin view sales](http://i.imgur.com/j2GTFXh.png)
 
 ##How to use this system :
  * Setting up the system:
