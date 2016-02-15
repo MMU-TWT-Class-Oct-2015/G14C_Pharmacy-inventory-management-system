@@ -28,6 +28,12 @@
 
 
 ##How to use this system :
+ * Setting up the system:
+   1. Install and run xampp. Run both Apache and MySQL.
+   2. Go into your xampp directory and choose htdocs. Use git CMD to get the whole repository folder into it.
+   3. Go to your browser and type in _**localhost/G14C_Pharmacy-inventory-management-system/homepage.php**_ .
+   4. Homepage will appear in browser.
+
  * STAFF
    1. First and foremost at the login page, if user does not has username and password, user is required to register their own username and password.
    2. After registered, user must key in the username and password and choose the staff radio button.
