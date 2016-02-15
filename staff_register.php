@@ -28,7 +28,7 @@ td
 font-size:20px;
 }
 
- input[type='button']
+ input[type='submit']
 {
 	background-position:1px;
 	background-color:#66c2ff;
@@ -40,7 +40,7 @@ font-size:20px;
 	font-size:17px;
 }
 
-input[type='button']:hover
+input[type='submit']:hover
 {
 	font-family:arial narrow;
 	background-color:#ccebff;
@@ -162,10 +162,10 @@ function validate() {
   <td> <input type="text" name="contactNumber" placeholder="Your Contact Number"/><span id="four"style="font-size:14px;font-weight:bolder;color:red;"></span></td>
   </tr>
 </table>
-<input type="submit" name="register" value="Register"  onclick="return validate()"> <input type="submit" name="cancel" value="cancel">
+<span style="margin-left:200px;"><input type="submit" name="register" value="Register"  onclick="return validate()"> <input type="submit" name="cancel" value="cancel">
 </form>
 </div>
-<div style=";background-color:black;height:1px;margin-top:310px;"></div>
+<div style=";background-color:black;height:1px;margin-top:91px;"></div>
 <div style=";background-color:#004c80;height:62px"><br/></div>
 </div>
 
