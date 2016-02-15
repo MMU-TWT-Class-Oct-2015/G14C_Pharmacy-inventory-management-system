@@ -129,7 +129,7 @@ height:500px;
 function validate() {
 	if (document.Editfrm.fullname.value == "") {
 		alert ("Name: Enter your name!");
-		document.Editfrm.fullname.value.focus();
+		document.Editfrm.fullname.focus();
 		return false;
 	}
 	if (!/^[a-zA-Z\s]*$/g.test(document.Editfrm.fullname.value)){
@@ -138,11 +138,16 @@ function validate() {
 		return false;
 	}
 
-	if ((document.Editfrm.email.value == "") || {
-		alert("Email: Please enter your email address!")
-		document.Editfrm.contactNumber.focus();
-		return false;
-	}
+  if (document.Editfrm.email.value == ""){
+    alert ("Email: Enter your email!");
+    document.Editfrm.email.focus();
+    return false;
+  }
+  if ((!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.Editfrm.email.value))){
+    alert ("Email: Invalid email!");
+    document.Editfrm.email.focus();
+    return false;
+  }
 }
 </script>
 
@@ -203,7 +208,7 @@ Edit Profile
 <tr>
 <td></td>
 <td></td>
-<td><input type="submit" name="btnupdate" value="Update"/><input type="submit" name="btncancel" value="Cancel"/></td>
+<td><input type="submit" name="btnupdate" value="Update" onclick="return validate();"/><input type="submit" name="btncancel" value="Cancel"/></td>
 </tr>
 </table>
 </form>
