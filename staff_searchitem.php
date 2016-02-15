@@ -39,11 +39,15 @@ if(isset($_POST["Itemsold"]))
   $c = $_POST["ProdCode"];
   $query = mysql_query("select * from product where ProductCode = '$c'");
   $row2 = mysql_fetch_assoc($query);
+  $id = $row2["ProductID"];
   $q = $row2["ProductQuantity"];
   $quantity = $_POST["quantity"];
-  $rItem = $q - $quantity;
+  $sItem = $q - $quantity;
+  date_default_timezone_set('Asia/Kuala_Lumpur');
+  $sdate = date("d M Y h:i:s A");
 
-  mysql_query("update product set ProductQuantity = $rItem where ProductCode = '$c'");
+  mysql_query("update product set ProductQuantity = $sItem where ProductCode = '$c'");
+  mysql_query("insert into sales (SalesQuantity,SalesDate,ProductID,StaffID) values ('$quantity','$sdate',$id,$sess_sid)");
   ?>
 
 		<script type="text/javascript">
