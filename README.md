@@ -25,7 +25,7 @@
 
 ##Screenshot
 Login page:
-![Login](http://i.imgur.com/ENigNxF.png)
+![Login](http://i.imgur.com/DPYYlFl.png)
 
 Staff page:
 ![Staff profile](http://i.imgur.com/2VfI1zt.png)
