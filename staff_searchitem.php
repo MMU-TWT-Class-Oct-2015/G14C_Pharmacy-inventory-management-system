@@ -313,7 +313,6 @@ elseif ($_POST["searchby"] == "Name")
 </tr>
  <?php
  }
-}
 else {
   ?>
 
@@ -322,6 +321,7 @@ else {
     </script>
 
   <?php
+}
 }
 }
  ?>

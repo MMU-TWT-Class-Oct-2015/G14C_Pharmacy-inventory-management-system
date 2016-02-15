@@ -171,9 +171,9 @@ if(isset($_POST["upload"]))
       echo "<span style='font-family:Century Gothic;font-size:10.5pt;'>Temp file: " . $_FILES["file"]["tmp_name"] . "</span><br>";
 
       move_uploaded_file($_FILES["file"]["tmp_name"],
-        "Storage/" . $_FILES["file"]["name"]);
+        "StaffPic/" . $_FILES["file"]["name"]);
 
-        $path = "Storage/" . $_FILES["file"]["name"];
+        $path = "StaffPic/" . $_FILES["file"]["name"];
         echo "Stored in: " . $path;
   	  mysql_query("update staff set StaffImage='$path' where StaffID = $sess_sid");
       }

@@ -1,27 +1,9 @@
 <?php
-if(isset($_POST["btnadd"]))
-{
-  $name = $_POST["fullname"];
-  $username = $_POST["UserName"];
-  $ic = $_POST["identification"];
-  $gender = $_POST["gender"];
-  $contact = $_POST["contactNumber"];
-  $age = $_POST["age"];
-  $email = $_POST["email"];
-  $password = $_POST["password"];
-
-  mysql_query("insert into staff(StaffName,StaffPassword,StaffUsername,StaffEmail,StaffAge,StaffGender,StaffIC,StaffContactNo,StaffImage) values
-  ('$name','$password','$username','$email','$age','$gender','$ic','$contact','Storage/profilepicture.jpg')");
-
-  header("location:homepage.php");
-}
-
 if(isset($_POST["cancel"]))
 {
   header("location:homepage.php");
 }
-
-?>
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -125,9 +107,13 @@ function validate() {
 
 <div class="register_form">
 <br/>
-<img src="profilepicture.jpg" title="user" width="120px" style="border-style:solid;border-width:1px;margin-left:67px;margin-bottom:50px;"/>
-<form name="registerfrm" method="POST">
+<form name="registerfrm" method="POST" enctype="multipart/form-data" action="staff_image.php">
 <table>
+<tr>
+  <td><span style="font-weight:bold;">Profile Picture  </span></td>
+  <td>:</td>
+  <td><input type="file" name="file"></td>
+</tr>
 <tr>
   <td><span style="font-weight:bold;">Full Name  </span></td>
   <td>:</td>
@@ -161,8 +147,8 @@ function validate() {
   <tr>
   <td><span style="font-weight:bold;">Gender </span></td>
   <td>:</td>
-  <td> <input type="radio" name="gender" value="Male"/>Male<span id="four"style="font-size:14px;font-weight:bolder;color:red;"></span></td>
-  <td> <input type="radio" name="gender" value="Female"/>Female<span id="four"style="font-size:14px;font-weight:bolder;color:red;"></span></td>
+  <td> <input type="radio" name="gender" value="Male"/>Male<span id="four"style="font-size:14px;font-weight:bolder;color:red;"></span>
+  <input type="radio" name="gender" value="Female"/>Female<span id="four"style="font-size:14px;font-weight:bolder;color:red;"></span></td>
   </tr>
   <tr>
   <td><span style="font-weight:bold;">Contact Number </span></td>
