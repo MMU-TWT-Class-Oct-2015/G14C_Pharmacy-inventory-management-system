@@ -24,6 +24,8 @@
 #####As a conclusion, modern technologies need to combine to assist the pharmacists in order to improve the efficiency of their works. This management system will allow the pharmacy administrators to key in all the drugs product they have into their inventory so that their staffs will easily get the information about the drugs which will easily check by clicking a few clicks in this system to view all details. All in all, this pharmacy inventory system will conclude the pharmacists to works more efficiency and effectively.
 
 ##Screenshot
+Login page:
+![Login](http://i.imgur.com/ENigNxF.png)
 
 
 
