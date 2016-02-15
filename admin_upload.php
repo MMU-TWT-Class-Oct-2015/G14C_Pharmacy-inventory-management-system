@@ -169,7 +169,7 @@ if(isset($_POST["upload"]))
   || ($_FILES["file"]["type"] == "image/x-png")
   || ($_FILES["file"]["type"] == "image/png"))
   && ($_FILES["file"]["size"] < 2000000)
-  && in_array($extension, $allowedExts)) {
+  && in_array($extension, $allowedExts) && $code != "" && $name != "" && $number != "" && $price != "" && $info != "") {
     if ($_FILES["file"]["error"] > 0) {
       echo "<span style='font-family:Century Gothic;font-size:10.5pt;'>Return Code: " . $_FILES["file"]["error"] . "</span><br>";
     } else {
