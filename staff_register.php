@@ -47,6 +47,18 @@ input[type='submit']:hover
 	color:#002ecd;
 	border-color:#001f33;
 }
+
+.register_form input[type="password"], .register_form input[type="text"], .register_form input[type="email"], .register_form input[type="number"],select
+{
+	border-style:solid;
+	border-width:2px;
+	border-color:#383838;
+	border-radius:4px;
+	padding-left:40px;
+	margin: 10px 5px;
+	height:27px;
+	width:180px;
+}
 </style>
 <script type="text/javascript">
 function validate() {
