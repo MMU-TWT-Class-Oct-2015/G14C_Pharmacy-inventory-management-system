@@ -102,7 +102,7 @@ td
 font-size:20px;
 }
 
- input[type='button']
+ input[type='submit']
 {
 	background-position:1px;
 	background-color:#66c2ff;
@@ -114,7 +114,7 @@ font-size:20px;
 	font-size:17px;
 }
 
-input[type='button']:hover
+input[type='submit']:hover
 {
 	font-family:arial narrow;
 	background-color:#ccebff;
