@@ -87,7 +87,7 @@ height:800px;
 	width:180px;
 }
 
-.profile_detail input[type='button']
+.profile_detail input[type='submit']
 {
 	background-position:1px;
 	background-color:#66c2ff;
@@ -100,7 +100,7 @@ height:800px;
 	font-size:18px;
 }
 
-.profile_detail input[type='button']:hover
+.profile_detail input[type='submit']:hover
 {
 	font-family:arial narrow;
 	background-color:#ccebff;
@@ -147,7 +147,7 @@ height:800px;
 Upload Image
 </div>
 <form action="upload.php" method="post" enctype="multipart/form-data">
-  <tabel>
+  <table>
     <tr>
       <td rowspan="3"><img src="<?php echo $row["StaffImage"]; ?>" height="200px" width="200px"/></td>
     </tr>
@@ -161,9 +161,9 @@ Upload Image
     <tr>
     <td></td>
     <td></td>
-    <td><span style="margin-left:350px;"><input type="submit" value="Upload Image" name="submit"></td>
+    <td><input type="submit" value="Upload Image" name="submit"></td>
     </tr>
-  </tabel>
+  </table>
 </form>
 </div>
 

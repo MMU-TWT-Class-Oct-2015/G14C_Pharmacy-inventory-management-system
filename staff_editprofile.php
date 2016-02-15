@@ -110,7 +110,7 @@ margin-top:10px;
 	width:180px;
 }
 
-.profile_detail input[type='button']
+.profile_detail input[type='submit']
 {
 	background-position:1px;
 	background-color:#66c2ff;
@@ -125,7 +125,7 @@ margin-top:10px;
 	margin-top:110px;
 }
 
-.profile_detail input[type='button']:hover
+.profile_detail input[type='submit']:hover
 {
 	font-family:arial narrow;
 	background-color:#ccebff;
@@ -139,29 +139,19 @@ margin-top:10px;
 function validate() {
 	if (document.editfrm.fullname.value == "") {
 		alert ("Name: Enter your name!");
-		document.editfrm.fullname.focus();
+		document.editfrm.fullname.value.focus();
 		return false;
 	}
 	if (!/^[a-zA-Z\s]*$/g.test(document.editfrm.fullname.value)){
 		alert("Name: Enter alphabets only!");
-		document.editfrm.fullname.focus();
+		document.editfrm.name.focus();
 		return false;
 	}
 	if ((document.editfrm.age.value =="") || isNaN(document.editfrm.age.value)) {
 		alert ("Age: Enter your age / Numeric only!");
-		document.editfrm.age.focus();
+		document.editfrm.age.value.focus();
 		return false;
 	}
-  if (document.editfrm.email.value == ""){
-    alert ("Email: Enter your email!");
-    document.editfrm.email.focus();
-    return false;
-  }
-  if ((!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.editfrm.email.value))){
-    alert ("Email: Invalid email!");
-    document.editfrm.email.focus();
-    return false;
-  }
 	if ((document.editfrm.identification.value == "") || isNaN(document.editfrm.identification.value) || document.editfrm.identification.value.length != 12 ) {
 		alert("IC: Please enter your IC in 12 NUMERIC!");
 		document.editfrm.identification.focus();
@@ -250,13 +240,13 @@ Edit Profile
 <tr>
 <td></td>
 <td></td>
-<td><input type="submit" name="btnupdate" value="Update" onclick="return validate();return update();"/><input type="submit" name="btncancel" value="Cancel"/></td>
+<td><input type="submit" name="btnupdate" value="Update" onclick="return update();" onsubmit="return validate()"/><input type="submit" name="btncancel" value="Cancel"/></td>
 </tr>
 </table>
 </form>
 </div>
 
-<div style=";background-color:black;height:1px;margin-top:365px;"></div>
+<div style=";background-color:black;height:1px;margin-top:251px;"></div>
 <div style=";background-color:#004c80;height:62px"><br/></div>
 </div>
 

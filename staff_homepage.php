@@ -157,7 +157,7 @@ Profile
 </table>
 </div>
 
-<div style=";background-color:black;height:1px;margin-top:418px;"></div>
+<div style=";background-color:black;height:1px;margin-top:391px;"></div>
 <div style=";background-color:#004c80;height:62px"><br/></div>
 </div>
 
