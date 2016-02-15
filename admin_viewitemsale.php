@@ -171,35 +171,60 @@ background:#e5f5ff;
 <div class="title">
 View Item Sale
 </div>
-<form>
+<form name="slaesfrm" method="post">
 <span style="font-weight:bold;">Search By  </span>:
-<select name="searchby">
+<select name="searchday">
 <option value="Daily">Daily</option>
 <option value="Month">Month</option>
-<option value="Most frequent sold item of the month">Most frequent sold item of the month</option>
+<option value="soldItem">Most frequent sold item of the month</option>
 </select>
+<input type="submit" name="btnsearch" value="Search"/>
 <br/>
-<input type="number" min="1" max="31">
-<input type="button" name="btnsearch" value="Search"/>
+<?php
+if(isset($_POST["btnsearch"]))
+{
+  if($_POST["searchday"] == "Daily")
+  {
+    date_default_timezone_set("Asia/Kuala_Lumpur")
+    ?>
 
-<table border="1">
-<tr>
-<th>No</th>
-<th>Code of medicine</th>
-<th>Name</th>
-<th>Price</th>
-<th>Quantity</th>
-<th>Date sold</th>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</table>
+    <input type="date" name="dailydate"/>
+    <input type="submit" name="btndaily" value="Search"/>
+ <?php
+  }
+if(isset($_POST["btndaily"]))
+{
+  $sday = $_POST["dailydate"];
+  $answer = mysql_query("select * from sales where SalesDate like '$sday%'");
+  $row1 = mysql_fetch_assoc($answer);
+  if(mysql_fetch_row($answer) > 0)
+  {
+    $query = mysql_query("select SUM(SalesQuantity) as q from sales");
+    $count = mysql_fetch_assoc($query);
+  ?>
+    Today sales is <?php echo $count['q']; ?>.
+  <?php
+  }
+  else {
+    ?>
+      <script>
+        alert("<?php echo $sday; ?>");
+      </script>
+    <?php
+  }
+}
+  if($_POST["searchday"] == "Month")
+  {
+    $answer2 = mysql_query("SELECT `StaffID` AS Staff, SUM(`SalesQuantity`) AS MONTHNAME(`SalesDate`) FROM `sales`");
+
+    $row2 = mysql_fetch_assoc($answer2);
+    while(mysql_fetch_row($row2))
+    {
+      echo $row2;
+    }
+  }
+}
+ ?>
 </form>
 </div>
 
