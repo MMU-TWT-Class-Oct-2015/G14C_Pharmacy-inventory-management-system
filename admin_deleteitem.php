@@ -166,7 +166,7 @@ function validate(){
 
 <div class="profile_detail">
 <div class="title">
-Search
+Delete Item
 </div>
 <form method="post" name="Deletefrm">
 <table>
