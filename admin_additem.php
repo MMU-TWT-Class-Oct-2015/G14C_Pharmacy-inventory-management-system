@@ -119,12 +119,12 @@ height:700px;
 function validate() {
 	if (document.Addfrm.Name.value == "") {
 		alert ("Please enter the product name");
-		document.Addfrm.Name.value.focus();
+		document.Addfrm.Name.focus();
 		return false;
 	}
 	if ((document.Addfrm.number.value =="") || isNaN(document.Addfrm.number.value)) {
 		alert ("Please enter the product quantity");
-		document.Addfrm.number.value.focus();
+		document.Addfrm.number.focus();
 		return false;
 	}
 	if ((document.Addfrm.price.value == "") || isNaN(document.Addfrm.price.value)) {
@@ -212,7 +212,7 @@ Add Item
 <tr>
 <td></td>
 <td></td>
-<td><input type="submit" name="btnadd" value="add" /><input type="submit" name="btncancel" value="Cancel"/></td>
+<td><input type="submit" name="btnadd" value="add" onclick="return validate();"/><input type="submit" name="btncancel" value="Cancel"/></td>
 </tr>
 </table>
 </form>
