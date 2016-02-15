@@ -134,9 +134,7 @@ height:700px;
 <div class="leftprofile">
 <li><a href="admin_homepage.php"><span style="clear:both;">Profile</span></a></li>
 
-<li><a href="admin_editprofile.php"><span style="clear:both;">Edit Profile</span></a>
-</li>
-<li><a href="admin_addstaff.php"><span style="clear:both;">Add Staff</span></a></li>
+<li><a href="admin_editprofile.php"><span style="clear:both;">Edit Profile</span></a></li>
 <li><a href="admin_additem.php"><span style="clear:both;">Add Item</span></a></li>
 <li><a href="admin_edititem.php"><span style="clear:both;">Edit Item</span></a></li>
 <li><a href="admin_deleteitem.php"><span style="clear:both;">Delete Item</span></a></li>
