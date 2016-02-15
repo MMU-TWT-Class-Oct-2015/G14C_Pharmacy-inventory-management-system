@@ -108,7 +108,7 @@ height:700px;
 	width:180px;
 }
 
-.profile_detail input[type='button']
+.profile_detail input[type='submit']
 {
 	background-position:1px;
 	background-color:#66c2ff;
@@ -123,7 +123,7 @@ height:700px;
 	margin-top:110px;
 }
 
-.profile_detail input[type='button']:hover
+.profile_detail input[type='submit']:hover
 {
 	font-family:arial narrow;
 	background-color:#ccebff;
@@ -207,7 +207,7 @@ View Items
 </tr>
 </table>
 </form>
-
+</div>
 <div style=";background-color:black;height:1px;margin-top:140px;"></div>
 <div style=";background-color:#004c80;height:62px"><br/></div>
 </div>
