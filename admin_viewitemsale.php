@@ -158,7 +158,7 @@ background:#e5f5ff;
 <li><a href="admin_editprofile.php"><span style="clear:both;">Edit Profile</span></a></li>
 <li><a href="admin_additem.php"><span style="clear:both;">Add Item</span></a></li>
 <li><a href="admin_edititem.php"><span style="clear:both;">Edit Item</span></a></li>
-<li><a href="admin_deleteitem.phpphp"><span style="clear:both;">Delete Item</span></a></li>
+<li><a href="admin_deleteitem.php"><span style="clear:both;">Delete Item</span></a></li>
 <li><a href="admin_viewitem.php"><span style="clear:both;">View Item</span></a></li>
 <li><a href="admin_viewitemsale.php"><span style="clear:both;">View Item sale</span></a></li>
 <li><a href="logout.php"><span style="clear:both;">Log Out</span></a></li>
