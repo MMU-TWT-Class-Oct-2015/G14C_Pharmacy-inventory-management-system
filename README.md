@@ -40,7 +40,7 @@ Admin page:
 ![Admin edit profile](http://i.imgur.com/S6cRrF5.png)
 ![Admin add item](http://i.imgur.com/QcOw3Qq.png)
 ![Admin edit item](http://i.imgur.com/YADlULg.png)
-![Admin delete item](http://i.imgur.com/GKjACSz.png)
+![Admin delete item](http://i.imgur.com/2GZ32p1.png)
 ![Admin view item](http://i.imgur.com/yAsINR8.png)
 ![Admin view sales](http://i.imgur.com/j2GTFXh.png)
 

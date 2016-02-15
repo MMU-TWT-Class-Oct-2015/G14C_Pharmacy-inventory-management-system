@@ -84,7 +84,7 @@ border:solid 2px ;
 margin-left:300px;
 margin-right:10px;
 margin-top:10px;
-height:700px;
+height:780px;
 }
 
 .profile_detail input[type="password"], .profile_detail input[type="text"], .profile_detail input[type="email"], .profile_detail input[type="number"],select, .profile_detail textarea
@@ -299,7 +299,7 @@ else {
 </form>
 </div>
 
-<div style=";background-color:black;height:1px;margin-top:140px;"></div>
+<div style=";background-color:black;height:1px;margin-top:60px;"></div>
 <div style=";background-color:#004c80;height:62px"><br/></div>
 </div>
 
