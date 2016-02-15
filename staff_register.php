@@ -52,21 +52,27 @@ input[type='button']:hover
 function validate() {
 	if (document.registerfrm.fullname.value == "") {
 		alert ("Name: Enter your name!");
-		document.registerfrm.fullname.value.focus();
+		document.registerfrm.fullname.focus();
 		return false;
 	}
   if (document.registerfrm.UserName.value == "") {
     alert ("Username: Enter your preferable username")
-    document.registerfrm.value.focus();
+    document.registerfrm.focus();
+    return false;
   }
 	if (!/^[a-zA-Z\s]+$/g.test(document.registerfrm.fullname.value)){
 		alert("Name: Enter alphabets only!");
 		document.registerfrm.name.focus();
 		return false;
 	}
+  if (document.registerfrm.password.value == "") {
+    alert ("Password: Please enter your password!");
+    document.registerfrm.password.focus();
+    return false;
+  }
 	if ((document.registerfrm.age.value =="") || isNaN(document.registerfrm.age.value)) {
 		alert ("Age: Enter your age / Numeric only!");
-		document.registerfrm.age.value.focus();
+		document.registerfrm.age.focus();
 		return false;
 	}
 	if ((document.registerfrm.identification.value == "") || isNaN(document.registerfrm.identification.value) || document.registerfrm.identification.value.length != 12 ) {

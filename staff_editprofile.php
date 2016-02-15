@@ -139,19 +139,29 @@ margin-top:10px;
 function validate() {
 	if (document.editfrm.fullname.value == "") {
 		alert ("Name: Enter your name!");
-		document.editfrm.fullname.value.focus();
+		document.editfrm.fullname.focus();
 		return false;
 	}
 	if (!/^[a-zA-Z\s]*$/g.test(document.editfrm.fullname.value)){
 		alert("Name: Enter alphabets only!");
-		document.editfrm.name.focus();
+		document.editfrm.fullname.focus();
 		return false;
 	}
 	if ((document.editfrm.age.value =="") || isNaN(document.editfrm.age.value)) {
 		alert ("Age: Enter your age / Numeric only!");
-		document.editfrm.age.value.focus();
+		document.editfrm.age.focus();
 		return false;
 	}
+  if (document.editfrm.email.value == ""){
+    alert ("Email: Enter your email!");
+    document.editfrm.email.focus();
+    return false;
+  }
+  if ((!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.editfrm.email.value))){
+    alert ("Email: Invalid email!");
+    document.editfrm.email.focus();
+    return false;
+  }
 	if ((document.editfrm.identification.value == "") || isNaN(document.editfrm.identification.value) || document.editfrm.identification.value.length != 12 ) {
 		alert("IC: Please enter your IC in 12 NUMERIC!");
 		document.editfrm.identification.focus();
@@ -240,7 +250,7 @@ Edit Profile
 <tr>
 <td></td>
 <td></td>
-<td><input type="submit" name="btnupdate" value="Update" onclick="return update();" onsubmit="return validate()"/><input type="submit" name="btncancel" value="Cancel"/></td>
+<td><input type="submit" name="btnupdate" value="Update" onclick="return validate();return update();"/><input type="submit" name="btncancel" value="Cancel"/></td>
 </tr>
 </table>
 </form>

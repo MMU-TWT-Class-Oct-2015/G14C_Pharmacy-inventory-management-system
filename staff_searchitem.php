@@ -151,15 +151,6 @@ height:800px;
 
 
 </style>
-<script>
-function validate(){
-  if (document.searchfrm.search.value = "") {
-    alert("Key in the code or the name of the medicine");
-    document.searchfrm.search.value.focus();
-    return false;
-  }
-}
-</script>
 </head>
 <body>
 <div style="border:black 2px solid;height:1122px;width:1020px;margin-left:200px;background-color:#e5f5ff">
@@ -210,7 +201,7 @@ Search
 <tr>
 <td><input type="text" name="search"></td>
 <td></td>
-<td><input type="submit" name="btnupdate" value="Search" onsubmit="return validate()"/></td>
+<td><input type="submit" name="btnupdate" value="Search" /></td>
 </tr>
 <?php
 if(isset($_POST["btnupdate"]))
