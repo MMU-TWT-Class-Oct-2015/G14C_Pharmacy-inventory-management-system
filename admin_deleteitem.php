@@ -121,15 +121,7 @@ height:700px;
 }
 
 </style>
-<script>
-function validate(){
-  if (document.Deletefrm.search.value = "") {
-    alert("Key in the code or the name of the medicine");
-    document.Deletefrm.search.value.focus();
-    return false;
-  }
-}
-</script>
+
 </head>
 <body>
 <div style="border:black 2px solid;height:1122px;width:1020px;margin-left:200px;background-color:#e5f5ff">
@@ -182,7 +174,7 @@ Delete Item
 <tr>
 <td><input type="text" name="search"></td>
 <td></td>
-<td><input type="submit" name="btnsearch" value="Search" onclick="return validate()"/></td>
+<td><input type="submit" name="btnsearch" value="Search" /></td>
 </tr>
 <?php
 if(isset($_POST["btnsearch"]))
