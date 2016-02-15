@@ -111,7 +111,30 @@ height:700px;
 	color:#002ecd;
 	border-color:#001f33;
 }
+table
+{
+font-family:arial narrow;
+font-size:17px;
+margin-left:40px;
+margin-right:5px;
+margin-top:40px;
+margin-bottom:50px;
+border-collapse:collapse;
+text-align:center;
+}
 
+table th
+{
+background:#262626;
+color:#66c2ff;
+padding:5px;
+}
+
+table td
+{
+padding:5px;
+background:#e5f5ff;
+}
 </style>
 </head>
 <body>
@@ -176,7 +199,7 @@ View Items
  ?>
 </table>
 </form>
-
+</div>
 <div style=";background-color:black;height:1px;margin-top:140px;"></div>
 <div style=";background-color:#004c80;height:62px"><br/></div>
 </div>
