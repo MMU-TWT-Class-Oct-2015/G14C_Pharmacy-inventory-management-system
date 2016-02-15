@@ -23,6 +23,8 @@
 ##Conclusion
 #####As a conclusion, modern technologies need to combine to assist the pharmacists in order to improve the efficiency of their works. This management system will allow the pharmacy administrators to key in all the drugs product they have into their inventory so that their staffs will easily get the information about the drugs which will easily check by clicking a few clicks in this system to view all details. All in all, this pharmacy inventory system will conclude the pharmacists to works more efficiency and effectively.
 
+##Screenshot
+
 
 
 ##How to use this system :
@@ -36,5 +38,12 @@
    7. Last but not least, user may log out to exit the session.
 
  * ADMIN
-   1. For the admin a.k.a manager, the default login username is _admin_ and password is _1234_ and tick the manager radio button in order to login successfully.
-   2. In the admin page,
+   1. For the admin a.k.a manager, the default login username is _**admin**_ and password is _**1234**_ and tick the manager radio button in order to login successfully.
+   2. In the admin page, user able to edit profile, add item, edit item, delete item, view item and also view item sale.
+   3. In Admin Edit Profile page, user able to edit his/her full name and email address only.
+   4. In Add Item page, the admin could add the details of the medicine to let staff noticed new medicine is added.
+   5. In Edit Item page, user required to key in the code of the medicine or the name of the medicine in order to edit the medicine details.
+   6. In Delete Item page, user can delete any medicine which the medicine is not in the inventory anymore by entering the code of the medicine or the name of the medicine.
+   7. In View Item page, same as staff, admin able to view the medicine details by clicking the medicine available in the table.
+   8. In View Item Sale page, user can check when and how many the medicine was sold daily, monthly, and most frequent item sold in a month.
+   7. At last, user may log out to exit the session.
