@@ -27,6 +27,9 @@
 Login page:
 ![Login](http://i.imgur.com/DPYYlFl.png)
 
+Register page:
+![register](http://i.imgur.com/J1uIn04.png)
+
 Staff page:
 ![Staff profile](http://i.imgur.com/2VfI1zt.png)
 ![Staff edit profile](http://i.imgur.com/UBVZ85D.png)
